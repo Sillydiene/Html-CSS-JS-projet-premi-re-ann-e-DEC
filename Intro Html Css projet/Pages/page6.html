@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--El ahdji silly Diene 
+Date: 12 avril 2024 
+page paiement-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+  <title>Page paiement</title>
+
+  <style>
+    body{
+      background: url("image3.jpeg");
+    }
+
+    
+
+    .divmontant{
+      background-color: rgb(33, 35, 192);
+      float: left;
+      width: 500px;
+      color: white;
+    }
+
+
+
+     .div1{
+           
+      float: left;
+            width: 50%;
+            background-color: rgb(213, 223, 223);
+          
+           
+        }
+        .div2{
+          float: left;
+            width: 50%;
+          background-color: rgb(213, 223, 223);
+          
+          
+        }
+        .container {
+            overflow: auto;
+        }
+        .buttonprecedent{
+          display:flex;
+          justify-content: center;
+
+        }
+    
+
+  </style>
+
+  <script>
+
+    function enoyermessage(){
+      alert("Transaction non approuve par votre banque");
+    }
+     // Récupération des valeurs des cookies
+     var cookies = document.cookie.split(';');
+        
+
+      window.onload=function afficherInformations() {
+        var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                
+                if (cookie.indexOf('sommeTotale=') === 0) {
+                    var montant = cookie.substring('sommeTotale='.length);
+                  //document.getElementById("sommeTotale").value= sommeTotale + " €";
+                  break;
+                 
+
+                }
+                if (cookie.indexOf('monatnttaxes=')===0) {
+                  // Affichage des valeurs dans le formulaire
+                  var sommeTotale= cookie.substring('monatnttaxes='.length);
+                  //document.getElementById("monatnttaxes").value= monatnttaxes + " €";
+                 break;
+
+                }
+                if (cookie.indexOf('montantfinal=')===0) {
+                  // Affichage des valeurs dans le formulaire
+                 var sommeTotale= cookie.substring('montantfinal='.length);
+                  //document.getElementById("montantfinal").value= montantfinal + " €";
+                  break;
+                 
+
+                }
+
+                
+            }
+             
+          }
+
+ 
+  </script>
+</head>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+<body>
+  <h1 style="text-align: center; color: aliceblue;">Paiement</h1>
+  <div class="container">
+    
+    <div class="div2">
+      <div class="divmontant">
+        <label for="sommeTotale">Somme total :</label>  
+      <input type="number" id="sommeTotale" disabled><br>
+      
+  
+      <label for="montanttaxes">Montant taxes :</label>
+      <input type="number" id="montanttaxes" disabled><br><hr>
+  
+      <label for="montantfinal">Montant Final :</label>
+      <input type="number" id="montantfinal" disabled><br><br>
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+       <button onclick="enoyermessage()"> Payer</button><br><br>
+      
+      </div>
+      
+
+       <form>
+        &nbsp;&nbsp; &nbsp;&nbsp;
+       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+       <img src="cap1.png" width="500"><br><br><br><br>
+       &nbsp;&nbsp; &nbsp;&nbsp;<label for="psys">Pays</label><br>
+        &nbsp;&nbsp;<select id="typecarte">
+          <option value="Canada"> Canada</option>
+          <option value="USA"> Credit</option>
+          <option value="France"> France</option>
+  
+        </select><br><br>
+        &nbsp;&nbsp; <label for="prenom">Prenom</label><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+
+        &nbsp;&nbsp; <label for="nom">Nom</label><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+
+        
+        &nbsp;&nbsp; <label for="rue">Rue</label><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+
+        &nbsp;&nbsp; <label for="appart">Num Appart</label><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+
+
+       </form>
+
+    </div>
+    <div class="div1">
+      <form> 
+        &nbsp;&nbsp; <label for="typecarte">Type de carte</label><br>
+        &nbsp;&nbsp;<select id="typecarte">
+          <option value="Debit"> Debit</option>
+          <option value="credit"> Credit</option>
+          <option value="AmericanExpress"> American Express</option>
+  
+        </select><br><br>
+        &nbsp;&nbsp; <label>Numero de carte</label><br>
+        &nbsp;&nbsp; <input type="number"><br><br>
+
+        &nbsp;&nbsp;<label>Date expiration </label><br>
+        &nbsp;&nbsp; <select id="mois">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+
+        </select>
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <input  type="date"><br><br>
+
+        &nbsp;&nbsp;<label>Numero securite </label><br>
+        &nbsp;&nbsp;<input  type="number"><br><br><br>
+
+        &nbsp;&nbsp; <label for="ville" >Ville</label><br><br>
+        &nbsp;&nbsp; <input type="text"><br><br>
+
+        &nbsp;&nbsp;<label>Province </label><br><br>
+        &nbsp;&nbsp; <select id="province">
+          <option value="Quebec">Quebec</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Nouvelle-Ecosse">Nouvelle-Ecosse</option>
+          <option value="Nouveau-Brunswick">Nouveau-Brunswick</option>
+          <option value="Manitoba">Manitoba</option>
+          <option value="Colombie-Britannique">Colombie-Britannique</option>
+          <option value="Ile-du-Prince-Edouard">Ile-du-Prince-Edouard</option>
+          <option value="Saskatchewan">Saskatchewan</option>
+        
+
+        </select><br><br>
+
+        &nbsp;&nbsp; <label for="ville">Code Postal</label><br><br>
+        &nbsp;&nbsp; <input type="text" style="height: 30px;"><br><br>
+
+        &nbsp;&nbsp; <label for="ville">Numero Tel</label>
+        &nbsp;&nbsp; <input type="number">&nbsp;&nbsp;
+         <label for="ext">EXT</label>
+         &nbsp;&nbsp; <input type="number"><br><br><br><br>
+         <img src="paiement securise.png" height="135px" width="300px" ><img src="secu img.png" height="135px">
+
+
+  
+      
+       </form>   
+
+    </div>
+
+
+
+  </div><br><bR><br><br>
+  <a href="page5.html" class="buttonprecedent"><button>Precedent</button></a>
+    
+   
+
+    
+
+
+  
+</body>
+</html>

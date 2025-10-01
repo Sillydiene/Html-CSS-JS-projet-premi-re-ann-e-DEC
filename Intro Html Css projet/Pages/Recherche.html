@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Seydina Mouhammad sylla et el Hadj silly Diene-->
+    <meta charset="UTF-8">
+    <title>Ligue des Champions</title>
+    <link rel="stylesheet" type="text/css" href="./mystyle4.css"/>
+    <script type="text/javascript">
+        function RechercheItems() {
+            var equipe = document.getElementById("nom").value;
+            var i;
+            for (i = 0; i < noms.length; i++) {
+                if (equipe.toUpperCase() === noms[i].toUpperCase()) {
+                    document.getElementById("nom").value = noms[i].toUpperCase();
+                    document.getElementById("idDetails").innerHTML = desc[i];
+                    document.getElementById("idImd").src = imgs[i];
+                    break;
+                }
+            }
+            if (i === noms.length) {
+                alert("Il n'y a pas d'equipe " + equipe);
+            }
+        }
+
+        function AfficheNom(text) {
+            document.getElementById("nom").value = text;
+            RechercheItems();
+        }
+
+
+        var noms = ["Arsenal", "Bayern Munich", "Atletico Madrid", "Dortmund", "Real Madrid", "Manchester City", "Paris Saint Germain", "Fc Barcelone"];
+        var desc = [
+           "Les Gunners n'ont jamais remporté la Ligue des champions, même s'ils ont touché du bout de leur doigt leur rêve, il n'y a pas si longtemps. Retour sur l'historique du club londonien dans la compétition.Club mythique en Angleterre, Arsenal fait partie du vivier de clubs londoniens se disputant chaque année la Premier League. Après plus de six ans de disette, les Gunners retrouvaient, lors de cette édition 2023-2024, la Ligue des champions. L’occasion donc pour se plonger dans l’histoire du club au sein de la compétition européenne. " ,
+           "Roi incontesté dans son pays, le Bayern Munich est monté à plusieurs reprises sur le toit de l'Europe. Que retenir du club bavarois dans la prestigieuse Ligue des Champions ? Fort de son héritage glorieux, tant sur la scène nationale que sur la scène européenne, le club bavarois a marqué de son empreinte la C1. Vainqueur pour la dernière fois en 2020, le Bayern Munich doit encore remplir son armoire à trophées à l’avenir.",
+           "Au contraire de ses rivaux, le Real et le Barça, l'Atlético n'est jamais monté sur le toit de l'Europe. Focus sur l'histoire des Colchoneros en Ligue des Champions.Champion d’Espagne à onze reprises, le club s’est également démarqué sur la scène européenne. Toutefois, en Ligue des champions, l’Atlético de Madrid n’a fait que toucher du bout du doigt son rêve de victoire. Retour sur son parcours semé d'embûches dans la C1.",
+           "Le Borussia Dortmund a participé 19 fois à la Ligue des champions (1 victoire, 1 finale, 2 demi-finales).Ils ont également participé 3 fois à la Coupe des Coupes (1 victoire) et 14 fois à la Coupe UEFA (2 finales, 1 demi-finale).Le Borussia Dortmund a remporté la Coupe intercontinentale une fois.Au cours des années 1950, ils ont atteint le premier tour de la Coupe des clubs champions.Dans les années 1960, ils ont atteint les demi-finales de la Coupe des clubs champions et ont remporté la Coupe d'Europe des vainqueurs de coupe.",
+           "Quand on parle ou que l’on pense à la Ligue des champions, c'est le club qui nous vient tout de suite en tête.Vainqueur à quatorze reprises de la compétition et ayant compté dans ses rangs certaines des plus grandes légendes du football, le Real Madrid est indissociable de la coupe aux grandes oreilles et de son histoire.",
+           "Récent vainqueur de la Ligue des champions pour la première fois de son histoire, Manchester City est désormais un grand d'Europe. Focus sur l'histoire des Citizens en C1.Tenant du titre sur l’édition 2023-2024 et toujours en lice pour prétendre à un deuxième titre d’affilée sur la scène européenne, les Citizens participent actuellement à leur quatorzième campagne en Ligue des champions. Toujours engagé et en bonne voie pour se qualifier en quarts de finale, voici le bilan du club depuis sa première participation en LDC, pendant la saison 1968-1969.",
+           "Depuis 2012 et l’arrivée des Qataris au Paris Saint-Germain, le club de la capitale se positionne comme un prétendant européen.chaque année. L’occasion de revenir sur l’histoire tumultueuse entre un club considéré par ses supporters comme “le plus grand club français” et la plus prestigieuse compétition européenne. ",
+           "En Espagne, deux clubs ont une histoire particulière avec la Ligue des Champions. D’un côté le Real Madrid, de l’autre le FC Barcelone.Club représentant la capitale catalane, le Barça a vu, lui aussi, défiler des légendes du football sous ses couleurs. Si le nombre de titres est bien en deçà par rapport au Real Madrid, le FC Barcelone a tout de même une histoire particulière avec la Ligue des Champions. "
+
+        ];
+        var imgs = ["arsenal.jpeg", "Bayern.jpeg", "athletico.jpeg", "BVB.jpeg", "real.jpeg", "city.jpeg", "psg.jpeg", "barca.jpeg"];
+
+        function RechercheItems() {
+            var equipe = document.getElementById("nom").value;
+            var i;
+            for (i = 0; i < noms.length; i++) {
+                if (equipe.toUpperCase() === noms[i].toUpperCase()) {
+                    document.getElementById("nom").value = noms[i].toUpperCase();
+                    document.getElementById("idDetails").innerHTML = desc[i];
+                    document.getElementById("idImd").src = imgs[i];
+                    break;
+                }
+            }
+            if (i === noms.length) {
+                alert("Il n'y a pas d'equipe " + equipe);
+            }
+        }
+    </script>
+</head>
+<body id="top">
+    <h1>La ligue des champions - Les Equipes qualifiées pour les quarts de finale</h1>
+    <div style="width: 95%; border:1px solid red">
+        <div class="plan1">  
+            <img src="map image.jpeg" alt="Equipe" usemap="#Equipe"/>
+            <map name="Equipe">
+                <area shape="rect" coords="53,165,134,246" href="#Arsenal2" alt="Arsenal" onclick="AfficheNom('Arsenal')"/>
+                <area shape="rect" coords="214,167,303,245" href="#Bayern Munich2" alt="Bayern Munich" onclick="AfficheNom('Bayern Munich')"/>
+                <area shape="rect" coords="349,169,422,249" href="#Atletico Madrid2" alt="Atletico Madrid" onclick="AfficheNom('Atletico Madrid')"/>
+                <area shape="rect" coords="497,166,591,248" href="#Dortmund2" alt="Dortmund" onclick="AfficheNom('Dortmund')"/>
+                <area shape="rect" coords="54,290,131,375" href="#Real Madrid2" alt="Real Madrid" onclick="AfficheNom('Real Madrid')"/>
+                <area shape="rect" coords="214,290,294,376" href="#Manchester City2" alt="Manchester City" onclick="AfficheNom('Manchester City')"/>
+                <area shape="rect" coords="337,293,428,370" href="#Paris Saint Germain2" alt="Paris Saint Germain" onclick="AfficheNom('Paris Saint Germain')"/>
+                <area shape="rect" coords="496,286,590,369" href="#Fc Barcelone2" alt="Fc Barcelone" onclick="AfficheNom('Fc Barcelone')"/>
+            </map>
+        </div>
+        
+            <form>
+                <input type="text" id="nom" value=""/>
+                <input type="button" value="Rechercher" onclick="RechercheItems()"/>
+                <p>Details: <span id="idDetails">?</span></p>
+                <img id="idImd" src="" alt="image des Equipes" width="200"/>
+            </form>
+            <h2><a name=""></a></h2>
+            <p>Quarts de finale (9-10 et 16-17 avril)<br/>Arsenal (ENG) - Bayern (GER)<br/>Atlético de Madrid (ESP) - Dortmund (GER)<br/>Real Madrid (ESP) - Manchester City (ENG)<br/>Paris (FRA)- Barcelone (ESP)</p>
+        
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

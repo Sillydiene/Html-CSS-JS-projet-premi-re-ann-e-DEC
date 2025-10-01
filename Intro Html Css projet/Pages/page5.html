@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!--EL HADJI SILLY DIENE 
+        date : 12 avril 2024
+    PAGE boutique PROJET  -->
+<head>
+    <meta charset="UTF-8">
+    <title>Boutique</title>
+    
+    
+<style>
+     body{
+      background: url("image3.jpeg");
+      color: #f2f2f2;
+    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #463fa7;
+        }
+        .total {
+            font-weight: bold;
+        }
+        div{
+            background-color: rgb(29, 34, 34);
+            text-align: center;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+           
+            
+        }
+    </style>
+
+    <script>
+      function calculerSousTotal(){
+        var sousTotal1 = parseFloat(document.getElementById("quantite1").value) * parseFloat(document.getElementById("prix1").value);
+      document.getElementById("sous-total1").textContent = sousTotal1.toFixed(2);
+
+      var sousTotal2 = parseFloat(document.getElementById("quantite2").value) * parseFloat(document.getElementById("prix2").value);
+      document.getElementById("sous-total2").textContent = sousTotal2.toFixed(2);
+
+      var sousTotal3 = parseFloat(document.getElementById("quantite3").value) * parseFloat(document.getElementById("prix3").value);
+      document.getElementById("sous-total3").textContent = sousTotal3.toFixed(2);
+
+      var sousTotal4 = parseFloat(document.getElementById("quantite4").value) * parseFloat(document.getElementById("prix4").value);
+      document.getElementById("sous-total4").textContent = sousTotal4.toFixed(2);
+
+      var sousTotal5 = parseFloat(document.getElementById("quantite5").value) * parseFloat(document.getElementById("prix5").value);
+      document.getElementById("sous-total5").textContent = sousTotal5.toFixed(2);
+
+      var sommeTotale= sousTotal1 + sousTotal2 + sousTotal3 + sousTotal4 + sousTotal5;
+      document.getElementById("sommeTotale").innerHTML=sommeTotale.toFixed(2);
+      
+      var montantfinal = sommeTotale*0.15+ sommeTotale;
+      var montanttaxes= sommeTotale*0.15;
+      document.getElementById("montanttaxes").innerHTML=montanttaxes.toFixed(2);
+      document.getElementById("montantfinal").innerHTML = montantfinal.toFixed(2);
+
+      document.getElementById("resultat").innerHTML = 
+                "<h2>Facture</h2>" +
+                "<p><strong>Nom du Produit 1 :</strong> Ballon UCL</p>" +
+                "<p><strong>Quantité :</strong> " +document.getElementById('quantite1').value + "</p>" +
+                "<p><strong>Prix :</strong> " +document.getElementById('prix1').value  + " €</p>" +
+                "<p><strong>Montant :</strong> " + sousTotal1.toFixed(2) + " €</p>" +
+                "<p><strong>Nom du Produit 2 :</strong> Billet de match</p>" +
+                "<p><strong>Quantité  :</strong> " + document.getElementById('quantite2').value + "</p>" +
+                "<p><strong>Prix  :</strong> " + document.getElementById('prix2').value + " €</p>" +
+                "<p><strong>Montant  :</strong> " + sousTotal2.toFixed(2) + " €</p>" +
+                "<p><strong>Nom du Produit 3 :</strong> Maillot dedicace</p>" +
+                "<p><strong>Quantité :</strong> " +document.getElementById('quantite3').value + "</p>" +
+                "<p><strong>Prix :</strong> " + document.getElementById('prix3').value + " €</p>" +
+                "<p><strong>Montant  :</strong> " + sousTotal3.toFixed(2) + " €</p>" +
+                "<p><strong>Nom du Produit 3 :</strong> Livre</p>"+
+                "<p><strong>Quantité :</strong> " + document.getElementById('quantite4').value + "</p>" +
+                "<p><strong>Prix  :</strong> " + document.getElementById('prix5').value + " €</p>" +
+                "<p><strong>Montant  :</strong> " + sousTotal4.toFixed(2) + " €</p>" +
+                "<p><strong>Nom du Produit 5 :</strong> Gant gardien de but</p>" +
+                "<p><strong>Quantité  :</strong> " +document.getElementById('quantite5').value + "</p>" +
+                "<p><strong>Prix :</strong> " + document.getElementById('prix5').value + " €</p>" +
+                "<p><strong>Montant  :</strong> " + sousTotal5.toFixed(2) + " €</p><hr>" +
+                "<h3>Les montants :</h3>" +
+                "<p><strong>Montant Total :</strong> " + sommeTotale.toFixed(2) + " €</p>"+ "<p><strong> Montant taxes :</strong> " + montanttaxes.toFixed(2) + " €</p>"
+                + "<p><strong> Montant apres taxes :</strong> " + montantfinal.toFixed(2) + " €</p>";
+        
+      
+
+      }
+      function creerCookie(){
+        var sousTotal1 = parseFloat(document.getElementById("quantite1").value) * parseFloat(document.getElementById("prix1").value);
+      document.getElementById("sous-total1").textContent = sousTotal1.toFixed(2);
+
+      var sousTotal2 = parseFloat(document.getElementById("quantite2").value) * parseFloat(document.getElementById("prix2").value);
+      document.getElementById("sous-total2").textContent = sousTotal2.toFixed(2);
+
+      var sousTotal3 = parseFloat(document.getElementById("quantite3").value) * parseFloat(document.getElementById("prix3").value);
+      document.getElementById("sous-total3").textContent = sousTotal3.toFixed(2);
+
+      var sousTotal4 = parseFloat(document.getElementById("quantite4").value) * parseFloat(document.getElementById("prix4").value);
+      document.getElementById("sous-total4").textContent = sousTotal4.toFixed(2);
+
+      var sousTotal5 = parseFloat(document.getElementById("quantite5").value) * parseFloat(document.getElementById("prix5").value);
+      document.getElementById("sous-total5").textContent = sousTotal5.toFixed(2);
+
+      var sommeTotale= sousTotal1 + sousTotal2 + sousTotal3 + sousTotal4 + sousTotal5;
+      document.getElementById("sommeTotale").innerHTML=sommeTotale.toFixed(2);
+      
+      var montantfinal = sommeTotale*0.15+ sommeTotale;
+      var montanttaxes= sommeTotale*0.15;
+      document.getElementById("montanttaxes").innerHTML=montanttaxes.toFixed(2);
+      document.getElementById("montantfinal").innerHTML = montantfinal.toFixed(2);
+
+
+
+        document.cookie = "sommeTotale= + sommeTotale;  expires=Thu, 19 Jun 2024 12:00:00 UTC";
+            document.cookie = "montanttaxes= + montanttaxes; expires=Thu, 19 Jun 2024 12:00:00 UTC";
+            document.cookie = "montantfinal= + montantfinal; expires=Thu, 19 Jun 2024 12:00:00 UTC";
+
+            window.location.href= "page6.html"
+
+      }
+    
+      
+
+    </script>
+</head>
+<body>
+
+<h1>Liste des produits</h1>
+
+<table id="products">
+    <thead>
+        
+       
+<tr>
+            
+            
+
+   
+<th>Id</th>
+            
+            
+
+    
+<th>Nom</th>
+            
+
+
+ 
+<th>Image</th>
+         
+           
+<th>Description</th>
+            
+    
+<th>Prix (€)</th>
+            
+  
+<th>Quantité</th>
+            
+        
+<th>Acheter</th>
+            
+            
+<th>Sous-total (€)</th>
+        
+        
+</tr>
+    </thead>
+    
+ 
+<tbody>
+       
+             
+          
+
+ <tr>
+<td>3863</td>
+      
+<td id="nomProduit">Ballon UCL </td>
+        
+<td><img src="ballon.jpeg" alt="Produit 1" width="150"></td>
+            
+           
+<td>Un ballon de la ligue des champions</td>
+            
+    
+<td>  <input id="prix1" value="37€" onchange="calculerSousTotal()" disabled></td>
+
+<td><input type="number" id="quantite1" min="0" value="0" onchange="calculerSousTotal()"></td>
+            
+            
+<td><input type="checkbox" class="buy"></td>
+            
+<td><span id="sous-total1" ></span></td>
+       
+</tr>
+<tr>
+    <td>3121</td>
+          
+    <td id="nomProduit">Billet de match </td>
+            
+    <td><img src="billet.jpeg" alt="Produit 2" width="150"></td>
+                
+               
+    <td>Acheter un billet pour la final UCL</td>
+                
+        
+    <td>  <input  id="prix2" value="700€" onchange="calculerSousTotal()" disabled></td>
+    
+    <td><input type="number" id="quantite2" min="0" value="0" onchange="calculerSousTotal()"></td>
+                
+                
+    <td><input type="checkbox" class="buy"></td>
+                
+    <td><span id="sous-total2" ></span></td>
+           
+    </tr>      
+    <tr>
+        <td>8906</td>
+              
+        <td id="nomProduit"> Maillot dedicace </td>
+                
+        <td><img src="maillot dedicace.jpeg" alt="Produit 3" width="150"></td>
+                    
+                   
+        <td>Achetez le maillot de l'equipe de France signer par les joueurs</td>
+                    
+            
+        <td>  <input  id="prix3" value="550€" onchange="calculerSousTotal()" disabled></td>
+        
+        <td><input type="number" id="quantite3" min="0" value="0"  onchange="calculerSousTotal()"></td>
+                    
+                    
+        <td><input type="checkbox" class="buy"></td>
+                    
+        <td><span id="sous-total3"></span></td>
+               
+    </tr> 
+    <tr>
+            <td>5566</td>
+                  
+            <td id="nomProduit">Livre </td>
+                    
+            <td><img src="livre.jpeg" alt="Produit 4" width="150"></td>
+                        
+                       
+            <td>Le livre d'or special equipe de France</td>
+                        
+                
+            <td>  <input  id="prix4" value="30€" onchange="calculerSousTotal()" disabled></td>
+            
+            <td><input type="number" id="quantite4" min="0" value="0" onchange="calculerSousTotal()"></td>
+                        
+                        
+            <td><input type="checkbox" class="buy"></td>
+                        
+            <td><span id="sous-total4"></span></td>
+                   
+     </tr>
+     <tr>
+        <td>1290</td>
+              
+        <td id="nomProduit">Gant gardien de but </td>
+                
+        <td><img src="gant.jpeg" alt="Produit 5" width="150"></td>
+                    
+                   
+        <td>Achetez le gant Puma ZX7 </td>
+                    
+            
+        <td>  <input  id="prix5" value="80€" onchange="calculerSousTotal()" disabled></td>
+        
+        <td><input type="number" id="quantite5" min="0" value="0"  onchange="calculerSousTotal()"></td>
+                    
+                    
+        <td><input type="checkbox" class="buy"></td>
+                    
+        <td><span id="sous-total5" ></span></td>
+               
+        </tr>
+
+    </tbody>
+</table>
+
+<div>
+    <a> Somme total : <span id="sommeTotale"></span> €</a><br>
+    <a> Montant taxes : <span id="montanttaxes"></span> €</a><br><hr>
+   <p>Le montant apres taxes = <span id="montantfinal"></span> €</p><hr>
+   <button onclick="creerCookie()" >Site de paiement</button>
+
+   <span id="resultat"></span> 
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+<head>
+    <!-- Nom : el hadji silly diene et seydina mouhamed sylla
+         Description : le top de la page
+         Date : 2024-03-22                 -->
+
+    <title>Top Page</title>
+    <style type="text/css">
+        body {
+            background-color: #294268;
+        }
+
+        table {
+            background-color: #18407c;
+        }
+
+        h1 {
+            color: rgb(215, 215, 230);
+        }
+
+        #buttonAlign {
+            padding-left: 25px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="JS/login.js"></script>
+</head>
+
+<body onload="f1()">
+    <form name="form1" action="serveur.asp" methode="post">
+        <table border="0">
+            <tr>
+                <td width="100"> <img src="Imgs/ucl1.png" alt="logo" width="100" /> </td>
+                <td width="600" align="center"> <h1>Soccer UCL edition 2023-2024</h1> </td>
+                <td width="300" align="right" style="color: aliceblue;">
+                    Nom utilisateur : &nbsp;&nbsp;
+                    <br />
+                    Mot de passe : &nbsp;&nbsp;
+                </td>
+                <td width="200" align="right">
+                    <input type="text" name="firstname" id="user" />&nbsp;&nbsp;
+                    <br />
+                    <input type="password" name="pwd" id="pwd" />&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input type="button" id="b1" onClick="authenticate_login()" value=" Connecter " &nbsp;=&nbsp; />
+                    <br />
+                    <input type="button" id="b2" onClick="authenticate_logout()" value="Deconnecter" />
+                    <!--               </td>
+        <td width="200" align="right">-->
+
+                </td>
+            </tr>
+        </table>
+    </form>
+    </td>
+    </tr>
+    </table>
+</body>
+
+</html>
